@@ -16,3 +16,11 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+## Vamos criar um exemplo de uma classe para representar uma SmartTV onde:
+
+1. Ela tenha as caracteristicas: ligada (boolean), canal (int) e volume (int).
+2. Nossa TV poderá ligar e desligar e assim mudar o estado ligada.
+3. Nossa TV aumentará e diminuirá o volume sempre em +1 ou -1.
+4. Nossa TV mudará o canal sempre em +1 ou -1 ou definindo o número correspondente.
