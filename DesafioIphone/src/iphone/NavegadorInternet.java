@@ -1,6 +1,6 @@
 package iphone;
 
-public class NavegadorInternet{
+public class NavegadorInternet implements Iphone {
 
     private String url = "";
 

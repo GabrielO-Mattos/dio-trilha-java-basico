@@ -1,6 +1,6 @@
 package iphone;
 
-public class ReprodutorMusical {
+public class ReprodutorMusical implements Iphone {
 
     private String musica = null;
 

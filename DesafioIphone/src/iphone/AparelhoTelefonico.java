@@ -1,6 +1,6 @@
 package iphone;
 
-public class AparelhoTelefonico {
+public class AparelhoTelefonico implements Iphone {
 
     private int telefone = 0;
 
