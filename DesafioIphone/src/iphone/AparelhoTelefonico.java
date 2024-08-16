@@ -1,12 +1,12 @@
 package iphone;
 
-public class AparelhoTelefonico implements Iphone {
+public class AparelhoTelefonico {
 
-    private int telefone = 0;
+    private String telefone = null;
 
-    public void ligar(int telefone){
+    public void ligar(String telefone){
         setTelefone(telefone);
-        System.out.println("Telefone: " + getTelefone());
+        System.out.println("Ligando para o telefone: " + getTelefone());
     }
 
     public void atender(){
@@ -19,11 +19,11 @@ public class AparelhoTelefonico implements Iphone {
 
     // get e sets
 
-    protected int getTelefone() {
+    protected String getTelefone() {
         return telefone;
     }
 
-    protected void setTelefone(int telefone) {
+    protected void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

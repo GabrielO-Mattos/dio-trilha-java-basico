@@ -1,6 +1,6 @@
 package iphone;
 
-public class ReprodutorMusical implements Iphone {
+public class ReprodutorMusical {
 
     private String musica = null;
 
@@ -14,7 +14,7 @@ public class ReprodutorMusical implements Iphone {
         if (getMusica() == null) {
             System.out.println("Tocando a música atual");
         }else{
-            System.out.println("Tocando a música atual" + getMusica());
+            System.out.println("Tocando a música atual: " + getMusica());
         }
 
     }
@@ -24,7 +24,7 @@ public class ReprodutorMusical implements Iphone {
         if (getMusica() == null) {
             System.out.println("Pausando a música atual");
         }else{
-            System.out.println("Pausando a música atual" + getMusica());
+            System.out.println("Pausando a música atual: " + getMusica());
         }
         
     }
