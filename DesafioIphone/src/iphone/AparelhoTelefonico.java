@@ -4,7 +4,7 @@ public class AparelhoTelefonico implements Iphone {
 
     private int telefone = 0;
 
-    public void exibirPagina(int telefone){
+    public void ligar(int telefone){
         setTelefone(telefone);
         System.out.println("Telefone: " + getTelefone());
     }
