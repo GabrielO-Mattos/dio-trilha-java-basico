@@ -106,7 +106,6 @@ public class Conta {
     }
 
     public void extrato(){
-        System.out.println("### EXTRATO ###");
         System.out.println("Numero da agencia: " + getNumeroAgencia());
         System.out.println("Numero da conta: " + getNumeroConta());
         System.out.println("Tipo da conta: " + getTipoConta());
