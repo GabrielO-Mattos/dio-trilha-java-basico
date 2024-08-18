@@ -10,6 +10,9 @@ public class Conta {
     private Cliente cliente;
     private NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
+    private static final int AGENCIA_PADRAO = 1;
+	private static int SEQUENCIA = 1;
+
     /* Get's and Set's */
     public double getSaldo() {
         return saldo;
@@ -47,6 +50,8 @@ public class Conta {
     /* Construtor */    
     public Conta(Cliente cliente) {
         this.cliente = cliente;
+        this.numeroAgencia = Conta.AGENCIA_PADRAO;
+		this.numeroConta = SEQUENCIA++;
     }
 
     /* Funcoes */
@@ -93,8 +98,8 @@ public class Conta {
 
     public void extrato(){
         System.out.println("### EXTRATO ###");
-        System.out.println("Numero da conta: " + getNumeroConta());
         System.out.println("Numero da agencia: " + getNumeroAgencia());
+        System.out.println("Numero da conta: " + getNumeroConta());
         System.out.println("Nome do cliente: " + getCliente().getNome());
         System.out.println("Saldo: " + formatoMoeda.format(getSaldo()));
         System.out.println();

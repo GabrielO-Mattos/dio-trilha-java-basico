@@ -6,14 +6,23 @@ public class App {
 
         Conta cc1 = new Conta(c1);
         Conta cc2 = new Conta(c2);
+
+        cc1.extrato();
+        cc2.extrato();
+        
         cc2.sacar(500, true);
+        
         cc2.depositar(10000, true);
         cc2.depositar(5000, true);
         cc2.sacar(10000, true);
+        cc2.extrato();
+        
 
         cc1.extrato();
+        cc2.extrato();
         cc2.transferir(cc1, 3000);
         cc1.extrato();
+        cc2.extrato();
 
 
     }
