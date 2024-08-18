@@ -1,7 +1,11 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Banco {
+
+    private NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
     private Map<String, Conta> contas;
     
     public Banco() {
@@ -30,8 +34,20 @@ public class Banco {
         double total = 0;
         for (Conta conta : contas.values()) {
             total += conta.getSaldo();
-            }
-        System.out.println("O saldo global é: " + total);
+        }
+        System.out.println("O saldo global é: " + formatoMoeda.format(total));
+    }
+
+    public void exibirNomeClientes(){
+        for (Conta conta : contas.values()) {
+            System.out.println(conta.getCliente().getNome());
+        }
+    }
+
+    public void exibirQuantidadeContas(){
+        System.out.println("Quantidade de contas: " + contas.size());
+        System.out.println("Quantidade de contas correntes: " + contas.entrySet().stream().filter(entry -> "Conta Corrente".equals(entry.getValue().getTipoConta())).count());
+        System.out.println("Quantidade de contas poupanca: " + contas.entrySet().stream().filter(entry -> "Conta Poupanca".equals(entry.getValue().getTipoConta())).count());
     }
 
 }
