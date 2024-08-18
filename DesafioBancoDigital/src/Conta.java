@@ -7,6 +7,7 @@ public class Conta {
     private double saldo;
     private int numeroConta;
     private int numeroAgencia;
+    private String tipoConta;
     private Cliente cliente;
     private NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
 
@@ -38,6 +39,13 @@ public class Conta {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+    public String getTipoConta() {
+        return tipoConta;
+    }
+    public void setTipoConta(String tipoConta) {
+        this.tipoConta = tipoConta;
+    }
+
     
     /* ToString */
     @Override
@@ -48,10 +56,11 @@ public class Conta {
     
     
     /* Construtor */    
-    public Conta(Cliente cliente) {
+    public Conta(Cliente cliente, String tipoConta) {
         this.cliente = cliente;
         this.numeroAgencia = Conta.AGENCIA_PADRAO;
 		this.numeroConta = SEQUENCIA++;
+        this.tipoConta = tipoConta;
     }
 
     /* Funcoes */
@@ -100,6 +109,7 @@ public class Conta {
         System.out.println("### EXTRATO ###");
         System.out.println("Numero da agencia: " + getNumeroAgencia());
         System.out.println("Numero da conta: " + getNumeroConta());
+        System.out.println("Tipo da conta: " + getTipoConta());
         System.out.println("Nome do cliente: " + getCliente().getNome());
         System.out.println("Saldo: " + formatoMoeda.format(getSaldo()));
         System.out.println();
