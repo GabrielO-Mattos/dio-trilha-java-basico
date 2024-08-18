@@ -4,8 +4,8 @@ public class App {
         Cliente c1 = new Cliente("DIO", "111", "Juridica");
         Cliente c2 = new Cliente("Gabriel", "112", "Fisica");
 
-        Conta cc1 = new Conta(c1);
-        Conta cc2 = new Conta(c2);
+        Conta cc1 = new ContaCorrente(c1);
+        Conta cc2 = new ContaPoupanca(c2);
 
         cc1.extrato();
         cc2.extrato();
