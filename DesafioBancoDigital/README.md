@@ -43,6 +43,11 @@ Permite que você defina uma classe filha que reutiliza (herda), estende ou modi
 Capacidade de um objeto poder ser referenciado de várias formas, ou seja, é capacidade de tratar objetos criados a partir das classes específicas como objetos de uma classe genérica. Cuidado, polimorfismo não quer dizer que o objeto fica se transformando, muito pelo contrário, um objeto nasce de um tipo e morre daquele tipo, o que pode mudar é a maneira como nos referimos a ele.
 
 
+
+-------------
+
+
+
 ### Agora é a sua hora de brilhar, use todo seu conhecimento em Java e Orientação a Objetos para evoluir o projeto criado nesta aula. Para isso, seguem algumas sugestões:
 1. Use todo o seu conhecimento para estender o domínio, incluindo novas classes, atributos e/ou métodos;
 2. Incluir o Lombok ao projeto para reduzir sua verbosidade de código.
