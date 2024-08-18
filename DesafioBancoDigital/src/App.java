@@ -4,11 +4,17 @@ public class App {
         Cliente c1 = new Cliente("DIO", "111", "Juridica");
         Cliente c2 = new Cliente("Gabriel", "112", "Fisica");
 
-        Conta cc = new Conta(c2);
+        Conta cc1 = new Conta(c1);
+        Conta cc2 = new Conta(c2);
+        cc2.sacar(500, true);
+        cc2.depositar(10000, true);
+        cc2.depositar(5000, true);
+        cc2.sacar(10000, true);
 
-        // System.out.println(c1.toString());
-        System.out.println(c2.toString());
-        System.out.println(cc.toString());
+        cc1.extrato();
+        cc2.transferir(cc1, 3000);
+        cc1.extrato();
+
 
     }
 }
