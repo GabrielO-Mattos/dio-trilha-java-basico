@@ -1,13 +1,19 @@
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Cliente {
+public class Cliente extends Exception {
 
+    /* Variaveis */
     private String nome;
     private String cpf;
     private String cnpj;
     private LocalDate dataNascimentoDate;
     private String telefone;
     private String tipoDePessoa;
+    private static Set<String> cpfs = new HashSet<>();
+    private static Set<String> cnpjs = new HashSet<>();
+
 
     /* Get's and Set's */
     public String getNome() {
@@ -46,18 +52,34 @@ public class Cliente {
     public void setTipoDePessoa(String tipoDePessoa) {
         this.tipoDePessoa = tipoDePessoa;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente [nome: " + getNome() + ", cpf: " + getCpf() + ", cnpj: " + getCnpj() + ", dataNascimentoDate: "
+                + getDataNascimentoDate() + ", telefone: " + getTelefone() + ", tipoDePessoa: " + getTipoDePessoa() + "]";
+    }
     
+
 
     /* Construtor */
     public Cliente(String nome, String cpf_cnpj, String tipoDePessoa) {
+        if(tipoDePessoa.equals("Juridica")) {
+            if (cnpjs.contains(cpf_cnpj)) {
+                throw new DuplicidadeDocumentoException("CNPJ já cadastrado: " + cpf_cnpj);
+            } else {
+                cnpjs.add(cpf_cnpj);
+                this.cnpj = cpf_cnpj;
+            }
+        } else {
+            if (cpfs.contains(cpf_cnpj)) {
+                throw new DuplicidadeDocumentoException("CNPJ já cadastrado: " + cpf_cnpj);
+            } else {
+                cpfs.add(cpf_cnpj);
+                this.cpf = cpf_cnpj;
+            }
+        }
         this.nome = nome;
         this.tipoDePessoa = tipoDePessoa;
-
-        if(tipoDePessoa.equals("Juridica")) {
-            this.cnpj = cpf_cnpj;
-        } else {
-            this.cpf = cpf_cnpj;
-        }
     }
 
 
