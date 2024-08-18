@@ -11,8 +11,7 @@ public class Cliente extends Exception {
     private LocalDate dataNascimentoDate;
     private String telefone;
     private String tipoDePessoa;
-    private static Set<String> cpfs = new HashSet<>();
-    private static Set<String> cnpjs = new HashSet<>();
+    private static Set<String> cpfs_cnpjs = new HashSet<>();
 
 
     /* Get's and Set's */
@@ -64,17 +63,17 @@ public class Cliente extends Exception {
     /* Construtor */
     public Cliente(String nome, String cpf_cnpj, String tipoDePessoa) {
         if(tipoDePessoa.equals("Juridica")) {
-            if (cnpjs.contains(cpf_cnpj)) {
+            if (cpfs_cnpjs.contains(cpf_cnpj)) {
                 throw new DuplicidadeDocumentoException("CNPJ já cadastrado: " + cpf_cnpj);
             } else {
-                cnpjs.add(cpf_cnpj);
+                cpfs_cnpjs.add(cpf_cnpj);
                 this.cnpj = cpf_cnpj;
             }
         } else {
-            if (cpfs.contains(cpf_cnpj)) {
+            if (cpfs_cnpjs.contains(cpf_cnpj)) {
                 throw new DuplicidadeDocumentoException("CNPJ já cadastrado: " + cpf_cnpj);
             } else {
-                cpfs.add(cpf_cnpj);
+                cpfs_cnpjs.add(cpf_cnpj);
                 this.cpf = cpf_cnpj;
             }
         }
