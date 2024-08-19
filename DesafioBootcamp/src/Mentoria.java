@@ -1,42 +1,28 @@
 import java.time.LocalDate;
 
-public class Mentoria {
+public class Mentoria extends Conteudo{
 
-    /* Variaveis */
-    private String titulo;
-    private String descricao;
+    // Variaveis
     private LocalDate data;
 
 
-    /* Get's e Set's */
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    // Get's and Set's    
     public LocalDate getData() {
         return data;
     }
     public void setData(LocalDate data) {
         this.data = data;
     }
-    
 
-    /* To String */
+    
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20d;
+    }
+    
     @Override
     public String toString() {
-        return "Mentoria [getTitulo()=" + getTitulo() + ", getDescricao()=" + getDescricao() + ", getData()="
-                + getData() + "]";
+        return "Curso{" + "titulo='" + getTitulo() + '\'' + ", descricao='" + getDescricao() + '\'' + ", data=" + getData() + '}';
     }
-
-    
-    
 
 }

@@ -1,38 +1,26 @@
-public class Curso {
+public class Curso extends Conteudo {
 
-    /* Variaveis */
-    private String titulo;
-    private String descricao;
+    // Variaveis
     private int cargaHoraria;
 
 
-    /* Get's e Set's */
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    // Get's and Set's    
     public int getCargaHoraria() {
         return cargaHoraria;
-    }
+    }    
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
 
 
-    /* To String */
     @Override
-    public String toString() {
-        return "Curso [getTitulo()=" + getTitulo() + ", getDescricao()=" + getDescricao() + ", getCargaHoraria()="
-                + getCargaHoraria() + "]";
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
     }
 
+    @Override
+    public String toString() {
+        return "Curso{" + "titulo='" + getTitulo() + '\'' + ", descricao='" + getDescricao() + '\'' + ", cargaHoraria=" + getCargaHoraria() + '}';
+    }
 
 }
