@@ -1,6 +1,6 @@
-import one.digitalinnovation.gof.SingletonEager;
-import one.digitalinnovation.gof.SingletonLazy;
-import one.digitalinnovation.gof.SingletonLazyHolder;
+import one.digitalinnovation.gof.singleton.SingletonEager;
+import one.digitalinnovation.gof.singleton.SingletonLazy;
+import one.digitalinnovation.gof.singleton.SingletonLazyHolder;
 
 public class Teste {
     public static void main(String[] args) throws Exception {
