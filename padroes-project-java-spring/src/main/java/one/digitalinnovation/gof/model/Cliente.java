@@ -9,14 +9,13 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Cliente {
 
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nome;
-    @ManyToOne
-    private String endereco;
+    @ManyToOne Endereco endereco;
 
-    
+
     public long getId() {
         return id;
     }
@@ -29,10 +28,10 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
