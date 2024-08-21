@@ -1,3 +1,4 @@
+import one.digitalinnovation.gof.facade.Facade;
 import one.digitalinnovation.gof.singleton.SingletonEager;
 import one.digitalinnovation.gof.singleton.SingletonLazy;
 import one.digitalinnovation.gof.singleton.SingletonLazyHolder;
@@ -34,6 +35,7 @@ public class Teste {
 
 
         // TESTE RELACIONADOS AO DESIGN PATTERN STRATEGY
+        System.err.println();
         Comportamento normal = new ComportamentoNormal();
         Comportamento defensivo = new ComportamentoDefensivo();
         Comportamento ofensivo = new ComportamentoOfensivo();
@@ -51,9 +53,10 @@ public class Teste {
 
 
 
-
         // TESTE RELACIONADOS AO DESIGN PATTERN FACADE
-        
+        System.err.println();
+        Facade facade = new Facade();
+        facade.migrarCliente("Gabriel", "12345-678");
 
 
     }
