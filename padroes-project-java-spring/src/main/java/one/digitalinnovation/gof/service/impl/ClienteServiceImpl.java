@@ -3,7 +3,6 @@ package one.digitalinnovation.gof.service.impl;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import one.digitalinnovation.gof.model.Cliente;
 import one.digitalinnovation.gof.model.ClienteRepository;
 import one.digitalinnovation.gof.model.Endereco;
@@ -61,7 +60,5 @@ public class ClienteServiceImpl implements ClienteService {
         cliente.setEndereco(endereco);
         clienteRepository.save(cliente);
     }
-
-    
 
 }
