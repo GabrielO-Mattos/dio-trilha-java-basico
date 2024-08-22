@@ -14,11 +14,8 @@ import one.digitalinnovation.gof.service.ViaCepService;
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
-    @Autowired
     private ClienteRepository clienteRepository;
-    @Autowired
     private EnderecoRepository enderecoRepository;
-    @Autowired
     private ViaCepService viaCepService;
 
     @Override
