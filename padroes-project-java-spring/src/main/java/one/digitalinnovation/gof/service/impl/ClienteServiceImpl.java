@@ -1,12 +1,18 @@
 package one.digitalinnovation.gof.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import one.digitalinnovation.gof.model.Cliente;
+import one.digitalinnovation.gof.model.ClienteRepository;
 import one.digitalinnovation.gof.service.ClienteService;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
+
+    @Autowired
+    private ClienteRepository clienteRepository;
+
 
     @Override
     public void atualizar(Long id, Cliente cliente) {
@@ -20,7 +26,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Iterable<Cliente> buscarTodos() {
-        return null;
+        return clienteRepository.findAll();
     }
 
     @Override
