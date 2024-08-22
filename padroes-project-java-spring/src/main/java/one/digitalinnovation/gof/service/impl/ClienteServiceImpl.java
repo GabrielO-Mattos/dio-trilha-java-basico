@@ -24,7 +24,10 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void atualizar(Long id, Cliente cliente) {
-        
+        Optional<Cliente> clienteBd = clienteRepository.findById(id);
+        if (clienteBd.isPresent()) {
+            salvarClienteComCep(cliente);
+        }
     }
 
     @Override
@@ -40,7 +43,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void deletar(Long id) {
-        
+        clienteRepository.deleteById(id);
     }
 
     @Override
