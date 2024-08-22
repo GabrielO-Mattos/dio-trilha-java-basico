@@ -1,8 +1,8 @@
 package one.digitalinnovation.gof.service.impl;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import one.digitalinnovation.gof.model.Cliente;
 import one.digitalinnovation.gof.model.ClienteRepository;
 import one.digitalinnovation.gof.service.ClienteService;
@@ -21,7 +21,8 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Cliente buscarPorId(Long id) {
-        return null;
+        Optional<Cliente> cliente = clienteRepository.findById(id);
+        return cliente.orElseThrow(() -> new RuntimeException("Cliente não localizado"));
     }
 
     @Override
