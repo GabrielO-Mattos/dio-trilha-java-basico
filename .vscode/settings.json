@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "DesafiosPadroesProjetoJava/PadroesProjetoJava/src",
+        "DesafioControleFluxo/src",
+        "santander-dev-week/src/main/java/me/dio/santander_dev_week"
+    ]
+}
