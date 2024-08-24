@@ -1,13 +1,19 @@
 spring:
   profiles:
     active: dev
+
 ---
 spring:
-  profiles: dev
   config:
-    import: application-dev.yml
+    activate:
+      on-profile: dev
+    config:
+      import: "application-dev.yml"
+
 ---
 spring:
-  profiles: prd
   config:
-    import: application-prd.yml
+    activate:
+      on-profile: prd
+    config:
+      import: "application-prd.yml"
